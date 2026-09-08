@@ -23,6 +23,8 @@ func HandleCommand(s storage.Storage, command string) {
 		notes, err := storage.ListNotes(s)
 		if err != nil {
 			fmt.Println(err)
+		} else if len(notes) == 0 {
+			fmt.Println("! Список задач пуст")
 		} else {
 			for _, v := range notes {
 				fmt.Printf("> ID: %3d\t Title: %s\n", v.ID, v.Text)
@@ -52,7 +54,7 @@ func HandleCommand(s storage.Storage, command string) {
 	}
 }
 
-func StartServer() {
+func StartCLI() {
 	ms := memory.NewMemoryStorage()
 	for {
 		fmt.Printf("> Выберите команду [add/list/del/help/quit]: ")

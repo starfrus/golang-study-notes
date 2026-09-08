@@ -45,6 +45,12 @@ func CheckNumberInputData(text string) (int, error) {
 	if err != nil {
 		return 0, fmt.Errorf("! Ошибка проверки на число: %w", err)
 	}
+
+	if num < 0 {
+		err := errors.New("id is negative")
+		return 0, fmt.Errorf("! Вы указали отрицательный id: %w", err)
+	}
+
 	return num, nil
 }
 
@@ -54,9 +60,16 @@ func InputID() (int, error) {
 	if err != nil {
 		return 0, err
 	}
+
 	id, err := CheckNumberInputData(text)
 	if err != nil {
 		return 0, err
 	}
+
+	if id == 0 {
+		err := errors.New("id is equal to zero")
+		return 0, fmt.Errorf("! Вы указали нулевой id: %w", err)
+	}
+
 	return id, nil
 }
