@@ -1,7 +1,7 @@
 package storage
 
 import (
-	"notesapp/internal/notes"
+	"notesapp/common/notes"
 )
 
 type Storage interface {
@@ -14,11 +14,10 @@ func AddNote(storage Storage, note notes.Note) error {
 	return storage.Add(note)
 }
 
-func ListNotes(storage Storage)([]notes.Note, error){
+func ListNotes(storage Storage) ([]notes.Note, error) {
 	return storage.List()
 }
 
-func DeleteNote(storage Storage, id int)(error){
+func DeleteNote(storage Storage, id int) error {
 	return storage.Delete(id)
 }
-

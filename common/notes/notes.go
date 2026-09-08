@@ -2,7 +2,7 @@ package notes
 
 import (
 	"fmt"
-	"notesapp/internal/input"
+	"notesapp/internal/cli/input"
 )
 
 type Note struct {

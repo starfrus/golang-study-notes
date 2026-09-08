@@ -1,7 +1,7 @@
 package main
 
-import "notesapp/internal/server"
+import "notesapp/internal/cli/server"
 
 func main() {
-	server.StartCLI()
+	cli_server.StartCLI()
 }

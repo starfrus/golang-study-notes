@@ -3,7 +3,7 @@ package memory
 import (
 	"errors"
 	"fmt"
-	"notesapp/internal/notes"
+	"notesapp/common/notes"
 )
 
 type MemoryStorage struct {
@@ -13,7 +13,7 @@ type MemoryStorage struct {
 
 func NewMemoryStorage() *MemoryStorage {
 	return &MemoryStorage{
-		notes: make([]notes.Note, 0),
+		notes:  make([]notes.Note, 0),
 		nextID: 1,
 	}
 }

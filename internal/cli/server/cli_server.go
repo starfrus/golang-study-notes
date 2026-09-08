@@ -1,11 +1,11 @@
-package server
+package cli_server
 
 import (
 	"fmt"
-	"notesapp/internal/input"
-	"notesapp/internal/memory"
-	"notesapp/internal/notes"
-	"notesapp/internal/storage"
+	"notesapp/common/notes"
+	"notesapp/common/storage"
+	"notesapp/internal/cli/input"
+	"notesapp/internal/cli/memory"
 	"os"
 )
 
